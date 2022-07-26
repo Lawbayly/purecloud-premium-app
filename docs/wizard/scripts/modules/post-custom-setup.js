@@ -45,7 +45,8 @@ async function configure(logFunc, installedData, user, gcClient) {
 
             let backendResult = await fetch(new Request('/provision', {
                 method: 'POST',
-                body: JSON.stringify(provisionBody)
+                body: JSON.stringify(provisionBody),
+                headers: {'Content-Type': 'application/json'}
             }));
 
             // Receiving the HTTP POST, the backend can:
